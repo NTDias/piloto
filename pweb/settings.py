@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j^9wnoxm259&=o_el-a^-=w-#%x1fy0ov$0d9p^jn^&!_kf23h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','vercel.app']
 
 
 # Application definition
@@ -103,9 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Fortaleza'
 
 USE_I18N = True
 
