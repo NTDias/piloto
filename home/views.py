@@ -1,18 +1,21 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import HttpResponse ,render
 
-# Criação da view 'index'
+# Create your views here.
+
 def index(request):
-    return HttpResponse("<h1>Pagina Principal - Teste 🚀</h1>")
+    return render(request, 'index.html')
 
-# Criação da view 'sobre'
 def sobre(request):
-    return HttpResponse("<h1>Sobre o Sistema Django! - Teste 🚀</h1>")
+    return render(request, 'sobre.html')
 
-# Criação da view 'contato'
 def contato(request):
-    return HttpResponse("<h1>Contato - Teste 🚀</h1>")
+    return render(request, 'contato.html')
+    
+def ajuda(request):
+    return render(request, 'ajuda.html')
 
-# Criação da view 'Ajuda'
-def ajuda(request): 
-    return HttpResponse("<h1>Ajuda - Teste 🚀</h1>")
+def exibir_item(request, id):
+    return render(request, 'exibir_item.html', {'id':id})
+
+def perfil(request, usuario):
+    return render(request, 'perfil.html', {'usuario':usuario})
