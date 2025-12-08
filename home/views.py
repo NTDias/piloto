@@ -32,7 +32,7 @@ def produto(request):
             {'id': 13, 'nome': 'Roteador Wi-Fi', 'preco': '220,00'},
         ],
     }
-    return render(request, 'produto/list.html',contexto)
+    return render(request, 'produto/lista.html',contexto)
 
 
 def exibir_item(request, id):
