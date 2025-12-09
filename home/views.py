@@ -62,7 +62,7 @@ def dia_semana(request, dia):
 def home(request):
     context = {
         'username': 'José Neto',
-        'items': ['Lápis','Caneta','Borracha']
+        'items': ['Copo','Prato','Colher']
     }
 
     return render(request,'home.html',context)
