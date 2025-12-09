@@ -4,50 +4,24 @@
 
 {% block content %}
 
-    
-<table class="table table-bordered table-hover">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Código</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Valor (R$)</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in lista %}
-        <tr>
-               <table class="table table-bordered table-hover mx-auto">
+  <table class="table table-bordered table-hover mx-auto">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Código</th>
+                <th scope="col">ID</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Valor (R$)</th>
             </tr>
         </thead>
         <tbody>
+
+        {% for item  in lista %}
             <tr>
-                <td>1</td>
-                <td>Notebook</td>
-                <td>2.500,00</td>
+                <td>{{item.id}}</td>
+                <td>{{item.nome}}</td>
+                <td>{{item.preco}}</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Monitor</td>
-                <td>500,00</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Roteador Wi-Fi</td>
-                <td>150,00</td>
-            </tr>
+        {% endfor %}
         </tbody>
     </table>
 
-        </tr>
-        {% endfor %}
-      
-    </tbody>
-</table>
-
- 
 {% endblock %}
