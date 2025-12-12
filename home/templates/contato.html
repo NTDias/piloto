@@ -1,7 +1,20 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block titulo %}Contato{% endblock titulo %}
 
-{% block conteudo %}<h1>  Contato - Jose Neto IFPI  <h1>
-                        <h3>  joseneto@ifpi.com  <h3>
-        {% endblock conteudo %}
+{% block titulo  %} Contato {% endblock %}
+
+
+{% block titulo_page  %} Contato {% endblock %}
+
+
+{% block conteudo  %}  
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Renderiza cada campo do formulário com <p> tags -->
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+
+
+{% endblock %}

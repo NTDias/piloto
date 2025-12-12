@@ -1,5 +1,9 @@
 from django.shortcuts import HttpResponse ,render
 
+from .forms import ContatoForm
+from .forms import ProdutoForm
+
+
 # Create your views here.
 
 def index(request):
@@ -66,3 +70,19 @@ def home(request):
     }
 
     return render(request,'home.html',context)
+
+#view contato
+def contato(request):
+    form = ContatoForm()
+    contexto = {
+        'form': form,
+    }
+    return render(request, 'contato.html', contexto)
+
+
+def form_produto(request):
+    form = ProdutoForm()
+    contexto = {
+        'form': form,
+    }
+    return render(request, 'produto/formulario.html', contexto)

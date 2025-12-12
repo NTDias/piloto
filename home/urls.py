@@ -9,5 +9,7 @@ urlpatterns = [
     path('produto/', views.produto, name='produto'),
     path('item/<int:id>', views.exibir_item, name='exibir_item'),
     path('diasemana/<int:dia>', views.dia_semana, name='dia_semana'),
-    path('home/', views.home, name='home')
+    path('home/', views.home, name='home'),
+    path('produto/form', views.form_produto, name='form_produto'),
+    
 ]
