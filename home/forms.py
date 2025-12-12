@@ -13,6 +13,32 @@ class ContatoForm(forms.Form):
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'E-mail'})
     )
+    
+    telefone = forms.CharField(
+        label='Telefone/WhatsApp',
+        required=True,  # Define como True se for obrigatório
+        widget=forms.TextInput(attrs={
+            'class': 'form-control', 
+            'placeholder': '(99)99999-9999'
+        })
+    )
+
+    ASSUNTO_CHOICES = [
+        ('', 'Selecione uma opção'), # Opção vazia inicial (opcional, mas recomendada)
+        ('suporte', 'Suporte técnico'),
+        ('comercial', 'Comercial'),
+        ('reclamacao', 'Reclamação'),
+        ('parceria', 'Parceria'),
+        ('financeiro', 'Financeiro'),
+    ]
+
+    assunto = forms.ChoiceField(
+        choices=ASSUNTO_CHOICES,
+        label='Assunto do contato',
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+
+
     mensagem = forms.CharField(
         widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Escreva sua mensagem', 'rows': 4})
     )
