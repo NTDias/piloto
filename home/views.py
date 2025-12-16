@@ -86,3 +86,16 @@ def form_produto(request):
         'form': form,
     }
     return render(request, 'produto/formulario.html', contexto)
+
+def detalhes_produto(request, id):
+    return render(request, "produto/detalhes_produto.html", {'id':id})
+
+def editar_produto(request, id):
+    return render(request, "produto/formulario.html", {'id':id})
+
+def excluir_produto(request, id):
+    if request.method == "POST":
+        print(f"Produto {id} excluído com sucesso!") 
+        return redirect('produto')
+
+    return render(request, "produto/excluir_produto.html", {'id': id})
